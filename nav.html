@@ -1,0 +1,64 @@
+<html>
+
+<head>
+     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Raleway:wght@300&display=swap"
+          rel="stylesheet">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" type="text/css"
+          rel="stylesheet">
+     <link href="index.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+     <div class="navbar">
+          <a href=".."><img draggable="false" style="width: 40px; height: 40px; margin-top: -10px; margin-left: 5px;"
+                    src="../icon.png" loading="lazy" data-scanned="true"></a>
+          <div class="dropdown">
+               <button class="dropbtn" onclick="karuFunction()">Karu
+                    <i class="fa fa-caret-down"></i>
+               </button>
+               <div class="dropdown-content" id="karuDropdown">
+                    <a href="../Items">Items</a>
+                    <a href="../Abilities">Abilities</a>
+               </div>
+          </div>
+          <div class="dropdown">
+               <button class="dropbtn" onclick="menuFunction()">Menus
+                    <i class="fa fa-caret-down"></i>
+               </button>
+               <div class="dropdown-content" id="menuDropdown">
+                    <a href="../Main_Menu">Main Menu</a>
+                    <p class="mid3"></p>
+                    <a href="../Fletching_Menu">Fletching</a>
+                    <a href="../Custom_Crafting_Menu">Custom Crafting</a>
+               </div>
+          </div>
+          <a href="../Changelog">Changelog</a>
+          <a href="../timeline" target="_blank">Timeline</a>
+     </div>
+     <script>
+         function karuFunction() {
+             document.getElementById("karuDropdown").classList.toggle("show");
+             document.getElementById("menuDropdown").classList.remove("show");
+         }
+         function menuFunction() {
+             document.getElementById("menuDropdown").classList.toggle("show");
+             document.getElementById("karuDropdown").classList.remove("show");
+         }
+ 
+         window.onclick = function (e) {
+             if (!e.target.matches('.dropbtn')) {
+                 var menuDropdown = document.getElementById("menuDropdown");
+                 if (menuDropdown.classList.contains('show')) {
+                     menuDropdown.classList.remove('show');
+                 }
+ 
+                 var karuDropdown = document.getElementById("karuDropdown");
+                 if (karuDropdown.classList.contains('show')) {
+                     karuDropdown.classList.remove('show');
+                 }
+             }
+         }
+     </script>
+</body>
+</html>
