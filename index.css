@@ -259,8 +259,14 @@ p.mid2 {
 .nompadding {
   padding: 500px 0px 0px 0px;
 }
+.smolpadding {
+  padding: 200px 0px 0px 0px;
+}
 .toppadding {
-  padding: 275px 0px 0px 0px;
+  padding: 300px 0px 0px 0px;
+}
+.noicon {
+  padding: 100px 0px 0px 0px;
 }
 p.mid2::before,
 p.mid2::after {
@@ -270,10 +276,10 @@ p.mid2::after {
   height: 1px;
   position: relative;
   vertical-align: middle;
-  width: 30%;
+  width: 60%;
 }
 p.mid2::before {
-  margin-left: -50%;
+  margin-left: -100%;
 }
 
 p.mid2::after {
@@ -453,4 +459,30 @@ p.mid2::after {
 
 .show {
   display: block;
+}
+
+#toTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  width: 50px;
+  height: 50px;
+}
+
+#toTop:hover {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.18);
 }
