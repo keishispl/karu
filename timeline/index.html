@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" type="image/png" href="images/versions/events/server_creation.png"/>
+	<link rel="shortcut icon" type="image/png" href="images/versions/events/server_creation.png" />
 	<meta property="og:title" content="Karu Minecraft Server Timeline" />
 	<meta property="og:description" content="An interactive journey through the versions of Karu Minecraft Server" />
 	<meta property=”og:url” content=”https://keishispl.github.io/karu/updates/timeline/” />
@@ -15,95 +16,84 @@
 	<title>Karu Minecraft Server Timeline</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
-	<body>
 
-		<div class="base">
-
-			<div class="top">
-
-				<header class="hidden" id="header">
-
-					<div class="header-content">
-
-						<img src="images/logos/logo_default.png" alt="Minecraft" id="edition-logo" class="logo">
-						<div class="separator"></div>
-						<div class="box">
-							<h2 class="title">Version Timeline</h2>
-							<div class="content">
-								<h3 class="relevant">With most relevant features of each update</h3>
-								<h3 id="edition_description" class="relevant"></h3>
-							</div>
+<body>
+	<div class="base">
+		<div class="top">
+			<header class="hidden" id="header">
+				<div class="header-content">
+					<img src="images/logos/logo_default.png" alt="Minecraft" id="edition-logo" class="logo">
+					<div class="separator"></div>
+					<div class="box">
+						<h2 class="title">Version Timeline</h2>
+						<div class="content">
+							<h3 class="relevant">With most relevant features of each update</h3>
+							<h3 id="edition_description" class="relevant"></h3>
 						</div>
-
 					</div>
+				</div>
 
-					<button id="button-nav-show"></button>
+				<button id="button-nav-show"></button>
+			</header>
+			<nav class="editions-nav" id="nav">
+				<button id="button-nav-hide"></button>
+				<div id="editions-tab-list" class="hidden editions-tab-list"></div>
+				<div class="options">
+					<button id="button-toggle-major">Major Updates</button>
+					<button id="button-toggle-minor">Minor Updates</button>
+					<button id="button-toggle-events">Events</button>
+				</div>
+			</nav>
+		</div>
+
+		<main>
+			<div id="editions-root"></div>
+
+			<div id="message-nothing" class="start-message hidden">
+				<h2><img src="images/misc/empty_timeline.png"></h2>
+				<h2>Coming Soon!</h2>
+				<h2>There's nothing here, yet..</h2>
+			</div>
+		</main>
+
+		<footer class="hidden" id="footer">
+			<h3>Forked from <a href="https://github.com/minecraft-timeline/minecraft-timeline.github.io">GitHub</a>
+				by <a href="http://github.com/henriquecolini">Henrique Colini</a></h3>
+			<h3>"Minecraft" is a trademark of Mojang Studios</h3>
+			<h3>This website is not affiliated with Mojang Studios or Microsoft</h3>
+		</footer>
+
+	</div>
+	<div class="infopanel-wrapper hidden" id="infopanel-wrapper">
+		<div class="infopanel">
+			<div class="top-bar">
+				<img id="infopanel-icon">
+				<button id="infopanel-close"></button>
+			</div>
+
+			<section class="content" id="infopanel-scroller">
+				<header>
+					<h1 id="infopanel-title"></h1>
+					<h2><span id="infopanel-subtitle"></span><span id="infopanel-date"></span></h2>
 				</header>
 
-				<nav class="editions-nav" id="nav">
-					<button id="button-nav-hide"></button>
-					<div id="editions-tab-list" class="hidden editions-tab-list"></div>
-					<div class="options">
-						<button id="button-toggle-major">Major Updates</button>
-						<button id="button-toggle-minor">Minor Updates</button>
-						<button id="button-toggle-events">Events</button>
-					</div>
-				</nav>
-
-			</div>
-
-			<main>
-				<div id="editions-root"></div>
-
-				<div id="message-nothing" class="start-message hidden">
-					<h2><img src="images/misc/empty_timeline.png"></h2>
-					<h2>Coming Soon!</h2>
-					<h2>There's nothing here, yet..</h2>
-				</div>
-
-			</main>
-
-			<footer class="hidden" id="footer">
-				<h3>Forked from <a href="https://github.com/minecraft-timeline/minecraft-timeline.github.io">GitHub</a> by <a href="http://github.com/henriquecolini">Henrique Colini</a></h3>
-				<h3>"Minecraft" is a trademark of Mojang Studios</h3>
-				<h3>This website is not affiliated with Mojang Studios or Microsoft</h3>
-			</footer>
-
+				<p id="infopanel-fun-fact"></p>
+				<h2 id="infopanel-main-label"><u>Main Features:</u></h2>
+				<ul id="infopanel-main-features"></ul>
+				<br>
+				<h2 id="infopanel-minor-label"><u>Minor Features:</u></h2>
+				<ul id="infopanel-minor-features"></ul>
+				<div id="infopanel-long-description"></div>
+				<a id="infopanel-learn-more" target="_blank" rel="noopener noreferrer">
+					<h2>Learn more about this update</h2>
+				</a>
+			</section>
 		</div>
+	</div>
 
-		<div class="infopanel-wrapper hidden" id="infopanel-wrapper">
+	<script type="application/javascript" src="js/index.js"></script>
+	<script type="application/javascript" src="js/editions.js"></script>
 
-			<div class="infopanel">
+</body>
 
-				<div class="top-bar">
-					<img id="infopanel-icon">
-					<button id="infopanel-close"></button>
-				</div>
-
-				<section class="content" id="infopanel-scroller">
-
-					<header>
-						<h1 id="infopanel-title"></h1>
-						<h2><span id="infopanel-subtitle"></span><span id="infopanel-date"></span></h2>
-					</header>
-
-					<p id="infopanel-fun-fact"></p>
-					<h2 id="infopanel-main-label"><u>Main Features:</u></h2>
-					<ul id="infopanel-main-features"></ul>
-					<br>
-					<h2 id="infopanel-minor-label"><u>Minor Features:</u></h2>
-					<ul id="infopanel-minor-features"></ul>
-					<div id="infopanel-long-description"></div>
-					<a id="infopanel-learn-more" target="_blank" rel="noopener noreferrer"><h2>Learn more about this update</h2></a>
-
-				</section>
-
-			</div>
-
-		</div>
-
-		<script type="application/javascript" src="js/index.js"></script>
-		<script type="application/javascript" src="js/editions.js"></script>
-
-	</body>
 </html>
